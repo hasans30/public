@@ -14,7 +14,7 @@ packages:
         }
       }
 runcmd:
-  - mkdir /tmp/nginx
-  - cd /tmp/nginx 
+  - mkdir "/tmp/nginx"
+  - cd "/tmp/nginx" 
   - wget https://raw.githubusercontent.com/hasans30/public/main/public.html
   - service nginx restart

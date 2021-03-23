@@ -9,9 +9,10 @@ packages:
     content: |
       server {
         listen 80;
-        location /tmp/ {
+        location /tmp/nginx {
           autoindex on;
         }
       }
 runcmd:
+  - mkdir /tmp/nginx
   - service nginx restart

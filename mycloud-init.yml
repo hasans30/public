@@ -1,0 +1,20 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - python3-pip
+  - nginx
+write_files:
+  - owner: www-data:www-data
+    path: /etc/nginx/sites-available/default
+    content: |
+      server {
+        listen 80;
+        location /tmp/nginx {
+          autoindex on;
+        }
+      }
+runcmd:
+  - mkdir "/tmp/nginx"
+  - cd "/tmp/nginx" 
+  - wget https://raw.githubusercontent.com/hasans30/public/main/public.html
+  - service nginx restart

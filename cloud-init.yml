@@ -3,7 +3,7 @@ package_upgrade: true
 packages:
   - python3-pip
   - nginx
-  write_files:
+write_files:
   - owner: www-data:www-data
     path: /etc/nginx/sites-available/default
     content: |
